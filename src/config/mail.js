@@ -9,9 +9,10 @@ const transporter = nodemailer.createTransport({
 		pass: process.env.MAIL_PASS,
 	},
 });
+
 // console.log(transporter);
 
-exports.sendMail = (data) => {
+exports.sendMail = (data, res) => {
 	transporter.sendMail(data, (error, info) => {
 		if (error) {
 			console.log('Error:', error);

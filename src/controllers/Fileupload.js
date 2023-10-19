@@ -58,10 +58,10 @@ exports.localFileUpload = async (req, res) => {
 		}
 
 		//maile send
-		var to = 'radhika@yopmail.com';
+		var to = req.body.mail;
 
 		var data = {
-			from: 'patelradhi1710@gmail.com', // sender address
+			from: process.env.MAIL_USER, // sender address
 			to: to, //list of receivers
 			subject: 'new  image file Uploaded on cloudinary', // Subject line
 			html: `<h2>Hello ji image file uploadeded locally </h2> </br>local file uploaded</</a>`, // html body
